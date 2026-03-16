@@ -1015,6 +1015,17 @@
         "url": "https://github.com/MicrosoftDocs/mcp.git"
       },
       "homepage": "https://github.com/microsoftdocs/mcp"
+    },
+    {
+      "name": "intercom",
+      "description": "Intercom integration for Claude Code. Search conversations, analyze customer support patterns, look up contacts and companies, and install the Intercom Messenger. Connect your Intercom workspace to get real-time insights from customer data.",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/intercom/claude-plugin-external.git",
+        "sha": "eeef353eead2e3dc5f33f64dbaae54e1309e0d45"
+      },
+      "homepage": "https://github.com/intercom/claude-plugin-external"
     }
   ]
 }
