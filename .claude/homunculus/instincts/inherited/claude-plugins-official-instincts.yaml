@@ -1,0 +1,601 @@
+# Instincts generated from https://github.com/Kimenzo/claude-plugins-official
+# Generated: 2026-03-31T13:12:37.489Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: claude-plugins-official-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Commit Length
+
+## Action
+
+Write moderate-length commit messages (~53 characters)
+
+## Evidence
+
+- Average commit message length: 53 chars
+- Based on 200 commits
+
+---
+id: claude-plugins-official-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: claude-plugins-official-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: claude-plugins-official-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: claude-plugins-official-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~11x per month
+- Files: external_plugins/imessage/*, external_plugins/discord/*, external_plugins/telegram/*
+
+---
+id: claude-plugins-official-workflow-add-plugin-to-marketplace
+trigger: "when doing add plugin to marketplace"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Workflow Add Plugin To Marketplace
+
+## Action
+
+Follow the add-plugin-to-marketplace workflow:
+1. Add or update entry in .claude-plugin/marketplace.json
+2. If new plugin: add plugin files under external_plugins/<plugin> or plugins/<plugin> (including .claude-plugin/plugin.json, .mcp.json, README.md, LICENSE, package.json, server.ts, etc.)
+3. If only updating: bump SHA or version in marketplace.json
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: .claude-plugin/marketplace.json, external_plugins/<plugin>/.claude-plugin/plugin.json, external_plugins/<plugin>/.mcp.json
+
+---
+id: claude-plugins-official-workflow-update-plugin-version-or-sha
+trigger: "when doing update plugin version or sha"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Workflow Update Plugin Version Or Sha
+
+## Action
+
+Follow the update-plugin-version-or-sha workflow:
+1. Edit .claude-plugin/marketplace.json to update the version or SHA for the plugin
+2. Optionally, update plugin files if local copy is maintained
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .claude-plugin/marketplace.json
+
+---
+id: claude-plugins-official-workflow-add-or-update-plugin-feature
+trigger: "when doing add or update plugin feature"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Workflow Add Or Update Plugin Feature
+
+## Action
+
+Follow the add-or-update-plugin-feature workflow:
+1. Edit <plugin>/server.ts to implement feature/fix
+2. Edit <plugin>/README.md to document the change
+3. Edit <plugin>/.claude-plugin/plugin.json or package.json to bump version if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: external_plugins/<plugin>/server.ts, external_plugins/<plugin>/README.md, external_plugins/<plugin>/.claude-plugin/plugin.json
+
+---
+id: claude-plugins-official-workflow-add-new-skill-or-reference-to-plugin
+trigger: "when doing add new skill or reference to plugin"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Workflow Add New Skill Or Reference To Plugin
+
+## Action
+
+Follow the add-new-skill-or-reference-to-plugin workflow:
+1. Add new SKILL.md, reference .md, or script .sh under skills/<skill>/ or references/
+2. Update plugin.json or README.md as needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: plugins/<plugin>/skills/<skill>/SKILL.md, plugins/<plugin>/skills/<skill>/references/*.md, plugins/<plugin>/skills/<skill>/scripts/*.sh
+
+---
+id: claude-plugins-official-workflow-sync-or-regenerate-lockfile
+trigger: "when doing sync or regenerate lockfile"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Workflow Sync Or Regenerate Lockfile
+
+## Action
+
+Follow the sync-or-regenerate-lockfile workflow:
+1. Regenerate bun.lock or equivalent lockfile for the plugin
+2. Commit updated lockfile
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: external_plugins/<plugin>/bun.lock
+
+---
+id: claude-plugins-official-workflow-multi-channel-feature-parity-update
+trigger: "when doing multi channel feature parity update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Workflow Multi Channel Feature Parity Update
+
+## Action
+
+Follow the multi-channel-feature-parity-update workflow:
+1. Edit server.ts in each relevant channel plugin (e.g., telegram/server.ts, discord/server.ts, imessage/server.ts)
+2. Edit plugin.json to bump version if needed
+3. Edit README.md if documentation changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: external_plugins/telegram/server.ts, external_plugins/discord/server.ts, external_plugins/imessage/server.ts
+
+---
+id: claude-plugins-official-instinct-camelcase-files
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Camelcase Files
+
+## Action
+
+Name the file using camelCase convention
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files: 'camelCase'
+
+---
+id: claude-plugins-official-instinct-camelcase-functions
+trigger: "When defining a function"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Camelcase Functions
+
+## Action
+
+Name the function using camelCase convention
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions: 'camelCase'
+
+---
+id: claude-plugins-official-instinct-pascalcase-classes
+trigger: "When defining a class"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Pascalcase Classes
+
+## Action
+
+Name the class using PascalCase convention
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes: 'PascalCase'
+
+---
+id: claude-plugins-official-instinct-screaming-constants
+trigger: "When defining a constant"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Screaming Constants
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE convention
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants: 'SCREAMING_SNAKE_CASE'
+
+---
+id: claude-plugins-official-instinct-absolute-imports
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Absolute Imports
+
+## Action
+
+Use absolute import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle: 'absolute'
+
+---
+id: claude-plugins-official-instinct-named-exports
+trigger: "When exporting modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Named Exports
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle: 'named'
+
+---
+id: claude-plugins-official-instinct-try-catch-errors
+trigger: "When handling errors in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Try Catch Errors
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- Pattern in errorHandling.style: 'try-catch'
+
+---
+id: claude-plugins-official-instinct-global-error-handler
+trigger: "When setting up error handling for the application"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Global Error Handler
+
+## Action
+
+Implement a global error handler
+
+## Evidence
+
+- Pattern in errorHandling.globalHandler: true
+
+---
+id: claude-plugins-official-instinct-separate-tests
+trigger: "When adding or organizing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Separate Tests
+
+## Action
+
+Place tests in a separate directory from source code
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: 'separate'
+
+---
+id: claude-plugins-official-instinct-feature-test-doc-trio
+trigger: "When implementing a new feature"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Feature Test Doc Trio
+
+## Action
+
+Add or update feature code, corresponding tests, and documentation together
+
+## Evidence
+
+- Workflow 'feature-development' commitSequence: Add feature implementation, Add tests for feature, Update documentation
+
+---
+id: claude-plugins-official-instinct-commit-prefixes
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Commit Prefixes
+
+## Action
+
+Start the commit message with a prefix such as 'feat', 'imessage', or 'telegram' to indicate scope
+
+## Evidence
+
+- Pattern in commits.prefixes: ['feat', 'imessage', 'telegram']
+- Seen in commit: 'feat(imessage): add IMESSAGE_DB_PATH env var for testing'
+
+---
+id: claude-plugins-official-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Commit Length
+
+## Action
+
+Keep commit messages concise, averaging around 50-60 characters
+
+## Evidence
+
+- Pattern in commits.averageLength: 53
+
+---
+id: claude-plugins-official-instinct-add-plugin-marketplace
+trigger: "When someone wants to add a new plugin to the marketplace"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Add Plugin Marketplace
+
+## Action
+
+Add or update entry in .claude-plugin/marketplace.json and add plugin files under external_plugins/<plugin> or plugins/<plugin>
+
+## Evidence
+
+- Workflow: add-plugin-to-marketplace
+- Seen in commits: 'Add mongodb plugin (#1095)'
+- Pattern in files: .claude-plugin/marketplace.json, external_plugins/<plugin>/*
+
+---
+id: claude-plugins-official-instinct-update-plugin-version
+trigger: "When someone wants to update an existing plugin to a new version or commit"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Update Plugin Version
+
+## Action
+
+Edit .claude-plugin/marketplace.json to update the version or SHA for the plugin
+
+## Evidence
+
+- Workflow: update-plugin-version-or-sha
+- Pattern in files: .claude-plugin/marketplace.json
+
+---
+id: claude-plugins-official-instinct-plugin-feature
+trigger: "When someone wants to add a new feature or fix a bug in a plugin"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Plugin Feature
+
+## Action
+
+Edit <plugin>/server.ts to implement feature/fix, update README.md, and bump version in plugin.json or package.json if needed
+
+## Evidence
+
+- Workflow: add-or-update-plugin-feature
+- Pattern in files: external_plugins/<plugin>/server.ts, README.md, plugin.json, package.json
+
+---
+id: claude-plugins-official-instinct-add-skill
+trigger: "When someone wants to expand a plugin's functionality or documentation"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Add Skill
+
+## Action
+
+Add new SKILL.md, reference .md, or script .sh under skills/<skill>/ or references/ and update plugin.json or README.md as needed
+
+## Evidence
+
+- Workflow: add-new-skill-or-reference-to-plugin
+- Pattern in files: plugins/<plugin>/skills/<skill>/SKILL.md, references/*.md, scripts/*.sh
+
+---
+id: claude-plugins-official-instinct-regen-lockfile
+trigger: "When someone wants to update dependencies or fix registry issues for a plugin"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Regen Lockfile
+
+## Action
+
+Regenerate bun.lock or equivalent lockfile for the plugin and commit the updated lockfile
+
+## Evidence
+
+- Workflow: sync-or-regenerate-lockfile
+- Pattern in files: external_plugins/<plugin>/bun.lock
+
+---
+id: claude-plugins-official-instinct-sync-channels
+trigger: "When someone wants to ensure all channel plugins have the same capabilities or bugfixes"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: Kimenzo/claude-plugins-official
+---
+
+# Claude Plugins Official Instinct Sync Channels
+
+## Action
+
+Edit server.ts, plugin.json, and README.md in each relevant channel plugin (telegram, discord, imessage) to maintain feature parity
+
+## Evidence
+
+- Workflow: multi-channel-feature-parity-update
+- Pattern in files: external_plugins/telegram/server.ts, discord/server.ts, imessage/server.ts, and related plugin.json/README.md
+
